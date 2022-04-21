@@ -31,7 +31,10 @@ const BookRentalService = {
     },
     getBook: (id) => {
         return axios.get(`/books/${id}`);
-    }
+    },
+    markAsTaken: (id) => {
+        return axios.put(`/books/mark/${id}`);
+    },
 
 
 

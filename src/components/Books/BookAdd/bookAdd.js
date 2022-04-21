@@ -1,12 +1,9 @@
 import React from 'react';
-// import {useHistory} from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
-// const navigate = useNavigate();
-// navigate('/home');
+
 
 const BookAdd = (props) => {
 
-    // const history = useHistory();
     const navigate = useNavigate();
     const [formData, updateFormData] = React.useState({
         name: "",
@@ -31,8 +28,7 @@ const BookAdd = (props) => {
 
 
         props.onAddBook(name,category, author, availableCopies);
-        // history.push("/books");
-        navigate.push('/books');
+        navigate('/books');
     }
 
     return(

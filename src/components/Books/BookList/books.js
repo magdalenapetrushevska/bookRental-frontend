@@ -1,27 +1,19 @@
 import React from 'react';
-import ReactPaginate from 'react-paginate';
+
 import BookTerm from '../BookTerm/bookTerm';
 import {Link} from 'react-router-dom';
-import bookRentalRepository from "../../../repository/bookRentalRepository";
+
 
 
 class Books extends React.Component {
     constructor(props) {
         super(props);
 
-        // this.state = {
-        //     page: 0,
-        //     size: 2
-        // }
-
+       
     }
+    
 
     render() {
-        // const offset = this.state.size * this.state.page;
-        // const nextPageOffset = offset + this.state.size;
-        // const pageCount = Math.ceil(this.props.books.length / this.state.size);
-        // const books = this.getbooksPage(offset, nextPageOffset);
-        // console.log(books, pageCount)
 
         return (
             <div className={"container mm-4 mt-5"}>
@@ -46,7 +38,7 @@ class Books extends React.Component {
                     
                 <BookTerm term={term} 
                 
-                onDelete={this.props.onDelete} onEdit={this.props.onEdit}/>
+                onDelete={this.props.onDelete} onEdit={this.props.onEdit} onMarkAsTaken={this.props.onMarkAsTaken}/>
                
                 
             );
@@ -63,38 +55,10 @@ class Books extends React.Component {
                         </div>
                     </div>
                 </div>
-                {/* <ReactPaginate previousLabel={"back"}
-                               nextLabel={"next"}
-                               breakLabel={<a href="/#">...</a>}
-                               breakClassName={"break-me"}
-                               pageClassName={"ml-1"}
-                               pageCount={pageCount}
-                               marginPagesDisplayed={2}
-                               pageRangeDisplayed={5}
-                               onPageChange={this.handlePageClick}
-                               containerClassName={"pagination m-4 justify-content-center"}
-                               activeClassName={"active"}/> */}
+               
             </div>
         )
     }
-    // handlePageClick = (data) => {
-    //     let selected = data.selected;
-    //     console.log(selected)
-    //     this.setState({
-    //         page: selected
-    //     })
-    // }
-
-    // getProductsPage = (offset, nextPageOffset) => {
-    //     // console.log(offset, nextPageOffset)
-    //     return this.props.books.map((term, index) => {
-    //         return (
-    //             <BookTerm term={term} onDelete={this.props.onDelete} onEdit={this.props.onEdit}/>
-    //         );
-    //     }).filter((book, index) => {
-    //         return index >= offset && index < nextPageOffset;
-    //     })
-    // }
 
 
 
